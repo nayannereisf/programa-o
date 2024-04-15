@@ -55,31 +55,31 @@ body {
     display: block;
 }
 
-@media screen and (min-width: 768px) {font-size: 32px;}
+@media screen and (min-width: 768px) {
 
-.botao:first-child {
-    border-radius: 40px 40px 0 0;
+   .botoes {
+    display: flex ;
+   }
+
+   .botao:first-child {
+    border-radius: 40px 0 0 0;
+   }
+
+   .botao:last-child {
+    border-radius: 0 40px 0 0;
+   }
+
 }
-    .botao:first-child {
-        border-radius: 40px 0 0 0;
-    }
 
-    .botao:last-child {
-        border-radius: 0 40px 0 0;
-    }
-    border-bottom: 4px solid var(--botao-ativo); 
-    border-left: 2px solid var(--botao-ativo); 
-    border-right: 2px solid var(--botao-ativo); 
-    border-top: none;
-    .ativo{
-        background-color: var(--botao-ativo);
-        border-bottom: 4px solid var(--verde);
-        }
+.ativo {
+    background-color: var(--botao-ativo);
+    border-bottom: 4px solid var(--verde);
+}
 
-
-        INDEX
-        <!DOCTYPE html>
+INDEX
+<!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,15 +98,17 @@ body {
         </div>
     </section>
 </body>
+
 </html>
+<script src="main.js"></script>
 
 MAIN
-const botoes = document.querySelectorAll(".botao");
+onst botoes = document.querySelectorAll(".botao");
 
-for(let i=0;i <botoes.length;i++){
-    botoes[i].onclick = function(){
-        
-        for(let j=0;j<botoes.length;j++){
+for (let i = 0; i < botoes.length; i++) {
+    botoes[i].onclick = function () {
+
+        for (let j = 0; j < botoes.length; j++) {
             botoes[j].classList.remove("ativo");
         }
         botoes[i].classList.add("ativo");
